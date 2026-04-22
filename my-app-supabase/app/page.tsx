@@ -13,7 +13,7 @@ export default function RegisterForm() {
     setMessage('')
     try {
       await register(formData) 
-      setMessage('Registration successful! Please check your email.')
+      setMessage('Registration successful!')
     } catch{ 
       setMessage('Something went wrong');
     } finally {
@@ -63,6 +63,24 @@ export default function RegisterForm() {
             />
           </div>
 
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-white">Attachment</label>
+            <input
+              name="attachment"
+              type="file"
+              required
+              className="w-full px-3 py-1.5 bg-transparent border border-[#27272a] rounded-md 
+                        text-sm text-[#a1a1aa]
+                        file:mr-4 file:py-1 file:px-3
+                        file:rounded-md file:border-0
+                        file:text-xs file:font-semibold
+                        file:bg-[#27272a] file:text-white
+                        hover:file:bg-[#3f3f46]
+                        focus:outline-none focus:ring-1 focus:ring-[#a1a1aa]
+                        cursor:pointer"
+            />
+            <p className="text-[10px] text-[#3f3f46]">Upload your document or photo.</p>
+          </div>
 
 
           {message && <p className="text-xs text-blue-400">{message}</p>}
